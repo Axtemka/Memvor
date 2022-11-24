@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.kotlinprojecttest2.databinding.ActivityMainBinding
+import com.example.kotlinprojecttest2.db.MemworDatabaseManager
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     // This will be connected with fragListTitles || platformName - Vk (test platform)
     private val viewer = ResponseViewer("vk")
+    private val dbManager = MemworDatabaseManager()
 
     private val fragList = listOf(
         Vk.newInstance(),
@@ -75,7 +77,9 @@ class MainActivity : AppCompatActivity() {
     fun vkParseOnClick(view: View){
         setContentView(R.layout.activity_main)
         //TODO(Different platform`s parsing from platform names (Reddit, Telegram))
-        viewer.returnUrls()
+        //viewer.returnUrls()
+        dbManager.databaseInit()
+        dbManager.addNewCommunity()
     }
 }
 

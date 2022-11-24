@@ -41,7 +41,7 @@ class ResponseViewer (private val platformName:String): ViewModel(){
         //questApi.getVkJson(domain = "memzavod1523l", access_token = "9fb466189fb466189fb46618449ca5442599fb49fb46618fce51db6b049cb80918bb78e", ver = "5.131")
         questApi = retrofit.create(QuestApi::class.java)
 
-//        questApi = RetrofitClient.vkRetrofit(RetrofitClient.httpClient(RetrofitClient.httpLoggingInterceptor())).create(QuestApi::class.java)
+//        questApi = RetrofitClient.vkRetrofit().create(QuestApi::class.java)
         questApi.getVkJson(domain = "dank_memes_ayylmao", access_token = "9fb466189fb466189fb46618449ca5442599fb49fb46618fce51db6b049cb80918bb78e", count = 100, ver = "5.131")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
