@@ -2,6 +2,7 @@ package com.example.kotlinprojecttest2.db
 
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+//////opapopa
 
 class MemworDatabaseManager {
     private lateinit var db: DatabaseReference
