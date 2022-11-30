@@ -12,12 +12,8 @@ class MemworDatabaseManager {
         db = FirebaseDatabase.getInstance().getReference(COMMUNITY_KEY)
     }
 
-    fun addNewCommunity(){
+    fun addNewCommunity(platform: String, domain: String, name: String, category: String){
         val id = db.key.toString()
-        val platform = "test_platform"
-        val domain = "test_domain"
-        val name = "test_name"
-        val category = "test_category"
         val newCommunity =  Community(id, platform, domain, name, category)
         db.push().setValue(newCommunity)
     }

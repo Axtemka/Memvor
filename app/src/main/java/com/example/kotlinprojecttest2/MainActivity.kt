@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         //TODO(Different platform`s parsing from platform names (Reddit, Telegram))
         //viewer.returnUrls()
         dbManager.databaseInit()
-        dbManager.addNewCommunity()
+        dbManager.addNewCommunity("vk", "test-domain", "test-name", "test-category")
     }
 }
 
